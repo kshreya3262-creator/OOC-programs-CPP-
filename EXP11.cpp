@@ -1,23 +1,39 @@
 #include <iostream>
 using namespace std;
 
-double division(int a, int b) {
+int main() {
+    int a, b;
+    cout << "Enter two numbers: ";
+    cin >> a >> b;
+
     if (b == 0) {
-        throw "Division by zero condition!";
+        cout << "Division by zero is not possible";
+    } else {
+        cout << "Division = " << (float)a / b;
     }
-    return (a / b);
+
+    return 0;
 }
 
+
+WITH EXCEPTION HANDLING:
+
+#include <iostream>
+using namespace std;
+
 int main() {
-    int x = 50;
-    int y = 0;
-    double z = 0;
+    int a, b;
+    cout << "Enter two numbers: ";
+    cin >> a >> b;
 
     try {
-        z = division(x, y);
-        cout << z << endl;
-    } catch (const char* msg) {
-        cerr << msg << endl;
+        if (b == 0) {
+            throw b;
+        }
+        cout << "Division = " << (float)a / b;
+    }
+    catch (int x) {
+        cout << "Exception: Division by zero is not allowed!";
     }
 
     return 0;
